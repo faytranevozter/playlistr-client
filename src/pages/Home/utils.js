@@ -3,10 +3,14 @@ import SpotifyAPI from '../../utils/SpotifyAPI';
 export default {
 	getPlaylists: async token => {
 		try {
-			const { data } = await SpotifyAPI.getUserPlaylists(token, 20);
+			const {data} = await SpotifyAPI.getUserPlaylists(token, 20);
 
 			if (data && data.items[0]) {
 				const playlists = [...data.items].map(playlist => {
+					if (!playlist.images) {
+						playlist.images = [];
+					}
+
 					if (!playlist.images[0])
 						playlist.images.push({
 							url: '/images/icons/playlistr-icon.png'
@@ -18,7 +22,7 @@ export default {
 				return playlists;
 			} else return [];
 		} catch (err) {
-			console.log(err);
+			console.error(err);
 			return [];
 		}
 	},
