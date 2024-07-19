@@ -1,4 +1,7 @@
 import axios from 'axios';
+import { apiURL } from '../App.config';
+
+axios.defaults.baseURL = apiURL;
 
 export default {
   createRoom: roomId => {
