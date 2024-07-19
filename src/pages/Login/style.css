@@ -9,15 +9,6 @@
 	opacity: 0.9;
 }
 
-/* .login.backdrop {
-	padding: 78px;
-	background: url('http://localhost:3000/images/yellow-backdrop.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 40% 85%;
-	opacity: 0.96;
-} */
-
 .login.brand-logo {
 	margin: 26px;
 }

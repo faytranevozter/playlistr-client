@@ -29,7 +29,7 @@ const RoomButtons = props => {
 				}
 			}
 			props.renderCenterAlert(props.centerAlertConfig.clear);
-			globalUtils.addRoomToURL(window.location.href, props.token, input);
+			globalUtils.addRoomToURL(props.token, input);
 		} catch (err) {
 			console.log(err);
 			props.renderCenterAlert(props.centerAlertConfig.somethingWentWrong);
@@ -57,7 +57,7 @@ const RoomButtons = props => {
 			const { data } = await API.createRoom(hexGen(16));
 
 			props.renderCenterAlert(props.centerAlertConfig.clear);
-			globalUtils.addRoomToURL(window.location.href, props.token, data.room_id);
+			globalUtils.addRoomToURL(props.token, data.room_id);
 		} catch (err) {
 			console.log(err);
 			props.renderCenterAlert(props.centerAlertConfig.somethingWentWrong);
