@@ -1,3 +1,5 @@
+import { publicURL } from "../App.config";
+
 export default {
 	addRoomToURL: (token, hex) => {
 		window.location.replace(
