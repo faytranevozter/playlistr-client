@@ -87,7 +87,7 @@ const Home = () => {
     // Returns roomHex after room is created
     await createPlaylistRoom().then(roomHex => {
       renderCenterAlert(config.centerAlert.clear);
-      globalConfigs.addRoomToURL(token, roomHex);
+      globalUtils.addRoomToURL(token, roomHex);
     });
   };
 
